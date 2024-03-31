@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculators</title>
+    <style>
+        body 
+        .calci {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .textbox {
+            display: block;
+            border-radius: 20px;
+            margin: 10px auto;
+            height: 30px;
+            padding: 5px 10px;
+        }
+
+        .rect_area {
+            border-radius: 20px;
+            background-color: rgb(134, 225, 109);
+            margin: 20px auto;
+        }
+
+        .calculate-btn {
+            cursor: pointer;
+            display: block;
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            margin: 10px auto;
+            background-color: rgb(97, 146, 13);
+            color: #fff;
+            padding: 5px 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calci rect_area">
+
+        <h1>Area Of Rectangle</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Length" required class="textbox" id="length" />
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Breadth" required class="textbox" id="breadth" />
+        <h2 id="ans">Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="arearect() ">Calculate</button>
+
+
+    </div>
+
+    <div class="calci rect_area">
+
+        <h1>Area Of Circle</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Radius" required class="textbox" id="Radius" />
+
+        <h2 id="ansc">Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="areacircle()">Calculate</button></form>
+    </div>
+
+    <div class="calci rect_area">
+
+        <h1>Area Of Square</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Length" required class="textbox" id="lengths" />
+
+        <h2 id="anss">Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="areacsquare()">Calculate</button>
+    </div>
+
+    <div class="calci rect_area">
+
+        <h1>Area Of Triangle</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Height" required class="textbox" id="height" />
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Base" required class="textbox" id="base" />
+        <h2 id="anst">Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="areatri()">Calculate</button>
+
+    </div>
+
+    <div class="calci rect_area">
+        <h1>Perimeter Of Rectangle</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Length" required class="textbox" id="lengthr">
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Breadth" required class="textbox" id="breadthr" />
+        <h2 id="ansr"> Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="rectperi()">Calculate</button>
+        <!-- 2(l+b) -->
+    </div>
+    <div class="calci rect_area">
+        <h1>Perimeter Of Square</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Length" required class="textbox" id="side" />
+
+        <h2 id="anssp"> Area: </h2>
+        <button type="submit" class="calculate-btn" onclick="sqperi()">Calculate</button>
+        <!--4*l-->
+    </div>
+
+    <div class="calci rect_area">
+        <h1>Simple Interest</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Principle Amount" required class="textbox" id="amount" />
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Rate Of Interest" required class="textbox" id="rate" />
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Time Period" required class="textbox" id="time" />
+        <h2 id="result">Interest Earned: </h2>
+        <h2 id="famt"> Total Value: </h2>
+        <button type="submit" class="calculate-btn" onclick="si()">Calculate</button>
+        <!-- S.I = P × R × T/100 -->
+
+    </div>
+    <div class="calci rect_area">
+        <h1>Square Root</h1>
+        <label for="rect_area"></label>
+        <input type="text" placeholder="Enter Number" required class="textbox" id="number" />
+
+        <h2 id="sq"> Square Root: </h2>
+        <button type="submit" class="calculate-btn" onclick=" sqroot()">Calculate</button>
+        <!--math.sqrt() -->
+    </div>
+
+    <script>
+        function arearect() {
+            const length = document.getElementById("length")
+            const breadth = document.getElementById("breadth")
+            const result = parseFloat(length.value) * parseFloat(breadth.value)
+            const answer = document.getElementById("ans")
+            answer.innerText = ` Area: ${result}`
+        }
+        function areacircle() {
+            const radius = document.getElementById("Radius")
+            const resultc = parseInt(radius.value) * parseInt(radius.value) * 3.14
+            const answerc = document.getElementById("ansc")
+            answerc.innerText = ` Area: ${resultc}`
+        }
+        function areacsquare() {
+            const Lengths = document.getElementById("lengths")
+            const results = parseFloat(Lengths.value) * parseFloat(Lengths.value)
+            const answers = document.getElementById("anss")
+            answers.innerText = ` Area: ${results}`
+
+        }
+        function areatri() {
+            const height = document.getElementById("height")
+            const base = document.getElementById("base")
+            const resultt = parseFloat(height.value) * parseFloat(base.value) * 0.5
+            const answert = document.getElementById("anst")
+            answert.innerText = ` Area: ${resultt}`
+        }
+        function rectperi() {
+            const length = document.getElementById("lengthr")
+            const breadth = document.getElementById("breadthr")
+            const resultr = parseFloat(length.value) * 2 + parseFloat(breadth.value) * 2
+            const answerr = document.getElementById("ansr")
+            answerr.innerText = ` Area: ${resultr}`
+        }
+        function sqperi() {
+            const length = document.getElementById("side")
+            const sqperi = parseFloat(length.value) * 4
+            const answerperi = document.getElementById("anssp")
+            answerperi.innerText = ` Area: ${sqperi}`
+        }
+        function si() {
+            const amt = document.getElementById("amount")
+            const rt = document.getElementById("rate")
+            const t = document.getElementById("time")
+            const si = (parseFloat(amt.value) * parseFloat(rt.value) * parseFloat(t.value)) / 100
+            const tamt = parseFloat(amt.value) + si
+            const final = document.getElementById("result")
+            const final_amt = document.getElementById("famt")
+            final.innerText = `Interest Earned: ${si}`
+            final_amt.innerText = `Total Value: ${tamt}`
+        }
+        function sqroot() {
+            const num = document.getElementById("number")
+            const sqr= Math.sqrt(parseFloat(num.value));
+            const s = document.getElementById("sq")
+
+            s.innerText = `Square Root: ${sqr}`
+        }
+    </script>
+</body>
+</html>
